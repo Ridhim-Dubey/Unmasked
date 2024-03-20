@@ -1,0 +1,82 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  /* Make sure the body covers the whole viewport */
+  min-height: 100vh;
+}
+
+.bg-img {
+  /* Set background image properties */
+  background-image: url("1234.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Make sure the background covers the whole viewport */
+  min-height: 100%;
+}
+  
+header {
+  background-color: rgba(255, 255, 255, 0.3); /* Adjust background opacity */
+  padding: 20px;
+  text-align: center;
+}
+  
+  h1 {
+    font-size: em;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 1.2em;
+    line-height: 1.5;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.3);;
+  }
+  
+  button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  nav button:hover {
+    background-color: #3e8e41;
+  }
+  
+  main {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #upload-button {
+    background-color: #007bff;  /* Blue */
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+  }
+  
+  #upload-button:hover {
+    background-color: #0062cc;
+  }
+  
+  footer {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    text-align: center;
+  }
+  

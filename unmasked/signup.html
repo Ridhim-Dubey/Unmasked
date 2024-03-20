@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNMASKED: Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>UNMASKED</h1>
+    <p>Seeing beyond the surface: revealing the truth within the pixels.</p>
+  </header>
+  <nav>
+    <a href="homepage.html"><button>Home</button></a>
+    <a href="about.html"><button>About Us</button></a>
+    <a href="login.html"><button>Login</button></a>
+    <a href="signup.html"><button>Sign Up</button></a>
+  </nav>
+  <main>
+    <h2>Sign Up for UNMASKED</h2>
+    <form id="signup-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+  </main>
+  <footer>
+    <p>&copy; 2024 UNMASKED</p>
+  </footer>
+  <script>
+  const signupForm = document.getElementById('signup-form');
+
+signupForm.addEventListener('submit', (event) => {
+  event.preventDefault(); // Prevent default form submission
+
+  const username = document.getElementById('username').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  // Prepare data to send to server (e.g., using FormData object)
+  const formData = new FormData();
+  formData.append('username', username);
+  formData.append('email', email);
+  formData.append('password', password); // Consider hashing password before sending
+
+  // Send data to server using fetch API (or alternative methods)
+  fetch('signup.php', {
+    method: 'POST',
+    body: formData,
+  })
+  .then(response => response.json())
+  .then(data => {
+    // Handle server response (e.g., success or error message)
+    if (data.success) {
+      alert('Signup successful! Please log in.');
+      // Redirect to login page or display success message
+    } else {
+      alert('Signup failed: ' + data.error);
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('An error occurred. Please try again later.');
+  });
+});
+
+  </script>
+</body>
+</html>
